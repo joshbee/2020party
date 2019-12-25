@@ -1,0 +1,53 @@
+*
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+a
+	text-decoration: none
+	&:hover
+		text-decoration: none
+
+.hide
+	zoom: 1
+	filter: alpha(opacity=0)
+	opacity: 0
+	-webkit-user-select: none
+	-moz-user-select: none
+	-ms-user-select: none
+	user-select: none
+
+.pc
+	display: block !important
+	+rwd(pad)
+		display: none !important
+.m
+	display: none !important
+	+rwd(pad)
+		display: block !important
+
+	// https://fontawesome.com/icons/check-circle?style=regular
+	// https://fontawesome.com/icons/times-circle?style=regular
+
+
+body
+	position: relative
+	font-family: 'Noto Sans TC'
+	background: #eee
+
+
+.wrap
+	position: relative
+	overflow: hidden
+	width: 100vw
+	height: 100vh
+	background: url(#{$img}q2.jpg) no-repeat
+	background-size: cover
+	.question
+		font-size: 10vw
+		color: #fff
+		font-weight: bold
+		+poa(null,null,10%,50%)
+		+transform(translate(-50%,0))
+		+text-shadow(rgba(#000, 1) 0px 0px 20px)
+
+
+
