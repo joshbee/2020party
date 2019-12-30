@@ -83,7 +83,9 @@ function wrongA(){
 	$('#result').removeClass();
 	$('#result').addClass('wrong');
 	$('.popup').stop().fadeIn(function(){
-		setTimeout(resetpopup, 3000);
+		if(isMobile == 1){
+			setTimeout(resetpopup, 3000);
+		}
 	});
 }
 
