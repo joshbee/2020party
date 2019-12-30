@@ -34,17 +34,15 @@ body
 	background: #eee
 
 
-.wrap
+#wrap
 	position: relative
 	overflow: hidden
 	width: 100vw
 	height: 100vh
-	background: url(../images/q8.jpg) no-repeat
-	background-size: cover
-	+rwd(pad)
-		background: url(../images/mobile/q8.jpg) no-repeat
-		background-size: cover
-	.question
+	overflow: hidden
+	&::after
+		content: ''
+		width: 75%
 		font-size: 10vw
 		color: #fff
 		font-weight: bold
@@ -52,8 +50,126 @@ body
 		+transform(translate(-50%,0))
 		+text-shadow(rgba(#000, 1) 0px 0px 20px)
 		letter-spacing: 1vw
+		text-align: center
 		+rwd(pad)
 			font-size: 24vw
+	&.q1
+		background: url(../images/q1.jpg) no-repeat
+		background-size: cover
+		+rwd(pad)
+			background: url(../images/mobile/q1.jpg) no-repeat
+			background-size: cover
+		&::after
+			content: '彩虹'
+
+	&.q2
+		background: url(../images/q2.jpg) no-repeat
+		background-size: cover
+		+rwd(pad)
+			background: url(../images/mobile/q2.jpg) no-repeat
+			background-size: cover
+		&::after
+			content: '愛玉'
+
+	&.q3
+		background: url(../images/q3.jpg) no-repeat
+		background-size: cover
+		+rwd(pad)
+			background: url(../images/mobile/q3.jpg) no-repeat
+			background-size: cover
+		&::after
+			content: '蜻蜓'
+
+	&.q4
+		background: url(../images/q4.jpg) no-repeat
+		background-size: cover
+		+rwd(pad)
+			background: url(../images/mobile/q4.jpg) no-repeat
+			background-size: cover
+		&::after
+			content: '胡瓜'
+
+	&.q5
+		background: url(../images/q5.jpg) no-repeat
+		background-size: cover
+		+rwd(pad)
+			background: url(../images/mobile/q5.jpg) no-repeat
+			background-size: cover
+		&::after
+			content: '吐司'
+
+	&.q6
+		background: url(../images/q6.jpg) no-repeat
+		background-size: cover
+		+rwd(pad)
+			background: url(../images/mobile/q6.jpg) no-repeat
+			background-size: cover
+		&::after
+			content: '陀螺'
+
+	&.q7
+		background: url(../images/q7.jpg) no-repeat
+		background-size: cover
+		+rwd(pad)
+			background: url(../images/mobile/q7.jpg) no-repeat
+			background-size: cover
+		&::after
+			content: '牙刷'
+
+	&.q8
+		background: url(../images/q8.jpg) no-repeat
+		background-size: cover
+		+rwd(pad)
+			background: url(../images/mobile/q8.jpg) no-repeat
+			background-size: cover
+		&::after
+			content: '烤肉'
+
+	&.q9
+		+background(linear-gradient(to bottom, #7ad2ff, #3ee5a0))
+		&::after
+			content: '你的妻子的姐妹的老公'
+			font-size: 14vw
+			line-height: 1.2
+			color: #fff
+			+text-shadow(rgba(#000, 1) 0px 0px 12px)
+			+poa(50%,null,auto,50%)
+			+transform(translate(-50%,-50%))
+
+	&.q10
+		+background(linear-gradient(to bottom, #7ad2ff, #3ee5a0))
+		&::after
+			content: '你的爸爸的姐妹的女兒\A(年紀比你小)'
+			white-space: pre-line
+			font-size: 11vw
+			line-height: 1.2
+			color: #fff
+			+text-shadow(rgba(#000, 1) 0px 0px 12px)
+			+poa(50%,null,auto,50%)
+			+transform(translate(-50%,-50%))
+
+	&.q11
+		+background(linear-gradient(to bottom, #7ad2ff, #3ee5a0))
+		&::after
+			content: '你的奶奶的弟弟的兒子'
+			font-size: 13vw
+			line-height: 1.2
+			color: #fff
+			+text-shadow(rgba(#000, 1) 0px 0px 12px)
+			+poa(50%,null,auto,50%)
+			+transform(translate(-50%,-50%))
+
+	&.q12
+		+background(linear-gradient(to bottom, #7ad2ff, #3ee5a0))
+		&::after
+			content: '你的爸爸的姐姐的兒子的女兒'
+			font-size: 12vw
+			line-height: 1.2
+			color: #fff
+			+text-shadow(rgba(#000, 1) 0px 0px 12px)
+			+poa(50%,null,auto,50%)
+			+transform(translate(-50%,-50%))
+
 
 
 .popup
@@ -62,7 +178,7 @@ body
 	height: 100%
 	background: rgba(#fff,0.5)
 	+pof(0,null,null,0,999)
-	.result
+	#result
 		+poa(50%,null,null,50%)
 		+transform(translate(-50%,-50%))
 		font-family: "Font Awesome 5 Free"
@@ -77,3 +193,7 @@ body
 			color: #ff2626
 			&::before
 				content: "\f057"
+
+
+.ui-loader
+	display: none
