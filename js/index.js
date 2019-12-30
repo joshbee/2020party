@@ -15,8 +15,8 @@ $(document).ready(function() {
 	if(isMobile == 0){
 		$(document).keydown(keydownFun);
 	}else {
-		$(document).on('swipedown',function(){alert("swipedown..");} );
-		$(document).on('swipeup',function(){alert("swipeup..");} );
+		// $(document).on('swipedown',function(){alert("swipedown..");} );
+		$(document).on('swipe',function(){alert("swipeup..");} );
 		$(document).on('swipeleft',function(){alert("swipeleft..");} );
 		$(document).on('swiperight',function(){alert("swiperight..");} );
 	}
