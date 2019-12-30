@@ -15,10 +15,9 @@ $(document).ready(function() {
 	if(isMobile == 0){
 		$(document).keydown(keydownFun);
 	}else {
-		// $(document).on('swipedown',function(){alert("swipedown..");} );
-		$(document).on('swipe',function(){alert("swipeup..");} );
-		$(document).on('swipeleft',function(){alert("swipeleft..");} );
-		$(document).on('swiperight',function(){alert("swiperight..");} );
+		$(document).on('taphold',nextQ );
+		$(document).on('swipeleft',wrongA );
+		$(document).on('swiperight',rightA );
 	}
 
 });
@@ -28,40 +27,20 @@ function keydownFun(event){
 	// console.log(event.which);
 
 	switch ( event.which ){
-		case 37: //鍵盤left
-			// console.log('上一題');
-			resetpopup();
-			$('#wrap').removeClass();
-			qNum--;
-			if(qNum == 0){
-				qNum = 1;
-			}
-			$('#wrap').addClass('q'+qNum);
-			break;
-
-		case 39: //鍵盤right
-			// console.log('下一題');
-			resetpopup();
-			$('#wrap').removeClass();
-			qNum++;
-			if(qNum == 13){
-				qNum = 12;
-			}
-			$('#wrap').addClass('q'+qNum);
-			break;
-
 		case 38: //鍵盤up
-			// console.log('對');
-			$('#result').removeClass();
-			$('#result').addClass('right');
-			$('.popup').stop().fadeIn();
+			prveQ();
 			break;
 
 		case 40: //鍵盤down
-			// console.log('錯');
-			$('#result').removeClass();
-			$('#result').addClass('wrong');
-			$('.popup').stop().fadeIn();
+			nextQ();
+			break;
+
+		case 39: //鍵盤right
+			rightA();
+			break;
+
+		case 37: //鍵盤left
+			wrongA();
 			break;
 
 		case 32: //空白鍵
@@ -72,6 +51,41 @@ function keydownFun(event){
 
 }
 
+function nextQ(){
+	// console.log('下一題');
+	resetpopup();
+	$('#wrap').removeClass();
+	qNum++;
+	if(qNum == 13){
+		qNum = 12;
+	}
+	$('#wrap').addClass('q'+qNum);
+}
+
+function prveQ(){
+	// console.log('上一題');
+	resetpopup();
+	$('#wrap').removeClass();
+	qNum--;
+	if(qNum == 0){
+		qNum = 1;
+	}
+	$('#wrap').addClass('q'+qNum);
+}
+
+function rightA(){
+	$('#result').removeClass();
+	$('#result').addClass('right');
+	$('.popup').stop().fadeIn();
+}
+
+function wrongA(){
+	$('#result').removeClass();
+	$('#result').addClass('wrong');
+	$('.popup').stop().fadeIn(function(){
+		setTimeout(resetpopup, 3000);
+	});
+}
 
 function resetpopup(){
 	$('#result').removeClass();
